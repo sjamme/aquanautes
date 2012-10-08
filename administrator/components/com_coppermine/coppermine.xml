@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5">
+	<name>coppermine</name>
+	<creationDate>begin of 2008 </creationDate>
+	<author>Guessous Mehdi Imed</author>
+	<authorEmail>nope@nope.com</authorEmail>
+	<authorUrl>http://www.mehdiplugins.com</authorUrl>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2</license>
+	<version>1.5</version>
+	<description>Bridge Coppermine - Joomla . 
+		&lt;br /&gt;&lt;br /&gt; 
+		Warning:&lt;br /&gt; 
+		It isn't a traditional component,&lt;br /&gt;
+		since this one is only used by the bridge,&lt;br /&gt;
+		and that you'll have to link directly to your gallery's folder.
+		&lt;br /&gt;&lt;br /&gt;
+		Please follow ALL instructions provided at &lt;a href=&quot;http://www.mehdiplugins.com/misc/index.htm&quot; &gt; my  website &lt;/a&gt;.
+		&lt;br /&gt;
+		You can support this work by making a donation there.  </description>
+	<files folder="site">
+		<filename>index.htm</filename>
+		<filename>coppermine.php</filename>
+	</files>
+	<administration>
+		<menu>Coppermine</menu>
+		<files folder="admin">
+			<filename>index.htm</filename>
+			<filename>admin.coppermine.php</filename>
+		</files>
+	</administration>
+</install>
