@@ -9,17 +9,17 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/js/jquery.dimensions.pack.js $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 /* Copyright (c) 2007 Paul Bakaus (paul.bakaus@googlemail.com) and Brandon Aaron (brandon.aaron@gmail.com || http://brandonaaron.net)
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- * $LastChangedDate: 2012-01-10 13:20:18 +0100 (Di, 10 Jan 2012) $
- * $Rev: 8304 $
+ * $LastChangedDate: 2012-03-29 16:32:35 +0200 (Do, 29 Mrz 2012) $
+ * $Rev: 8359 $
  *
  * Version: 1.2
  *

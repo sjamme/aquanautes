@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
   
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/ukrainian.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Ukrainian';
@@ -114,6 +114,7 @@ $lang_common['keywords_insert1'] = 'Ключові слова (розділяй�
 $lang_common['keywords_insert2'] = 'Вставити зі списку'; // cpg1.5
 $lang_common['keyword_separator'] = 'Роздільник ключових слів'; // cpg1.5
 $lang_common['keyword_separators'] = array ('' => 'пробіл',','=>' кома ',';'=>' крапка з комою'); // cpg1.5
+$lang_common['owner_name'] = 'Власник'; // cpg1.5
 $lang_common['filename'] = 'Файл'; // cpg1.5
 $lang_common['filesize'] = 'Розмір файлу'; // cpg1.5
 $lang_common['album'] = 'Альбом'; // cpg1.5

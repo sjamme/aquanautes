@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/estonian.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Coppermine ei tunnista...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Estonian';
@@ -115,6 +115,7 @@ $lang_common['keywords_insert1'] = 'Võtmesõnad (eraldamiseks %s)'; // cpg1.5
 $lang_common['keywords_insert2'] = 'Sisesta nimekirjast'; // cpg1.5
 $lang_common['keyword_separator'] = 'Võtmesõnade eraldaja'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'tühik', ','=>'koma', ';'=>'semikoolon'); // cpg1.5
+$lang_common['owner_name'] = 'Omaniku nimi'; // cpg1.5
 $lang_common['filename'] = 'Faili nimi'; // cpg1.5
 $lang_common['filesize'] = 'Faili maht'; // cpg1.5
 $lang_common['album'] = 'Album'; // cpg1.5

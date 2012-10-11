@@ -12,9 +12,9 @@
 <!--
   SVN version info:
 
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/docs/nl/dev_plugin_hooks.htm $
-  $Revision: 8304 $
+  $Revision: 8359 $
 -->
 <link rel="stylesheet" type="text/css" href="../style/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="../style/screen.css" media="screen" />
@@ -763,7 +763,14 @@ echo $footer;</textarea></td>
     <td valign="top"><a name="plugin_hooks_filename_theme_thumbnails_title"></a><strong>theme_thumbnails_title</strong><a href="#plugin_hooks_filename_theme_thumbnails_title" title="Link to this section"><img src="images/anchor.gif" width="15" height="9" border="0" alt="" /></a></td>
     <td valign="top">Filter</td>
     <td valign="top">filters the $param array which allows you to modify the title row of the thumbnails table.</td>
-    <td valign="top"><textarea class="samplecode" style="width:100%">$params = CPGPluginAPI::filter('theme_thumbnails_title', $param);</textarea></td>
+    <td valign="top"><textarea class="samplecode" style="width:100%">$param = CPGPluginAPI::filter('theme_thumbnails_title', $param);</textarea></td>
+  </tr>
+  <tr>
+    <td valign="top">include/themes.inc.php<br />themes/xxx/theme.php</td>
+    <td valign="top"><a name="plugin_hooks_theme_album_params"></a><strong>theme_album_params</strong><a href="#plugin_hooks_theme_album_params" title="Link to this section"><img src="images/anchor.gif" width="15" height="9" border="0" alt="" /></a></td>
+    <td valign="top">Filter</td>
+    <td valign="top">filters the $params array which allows you to modify album cells in the index.php pages.</td>
+    <td valign="top"><textarea class="samplecode" style="width:100%">$params = CPGPluginAPI::filter('theme_album_params', $params);</textarea></td>
   </tr>
   <tr>
     <td valign="top">include/themes.inc.php<br />themes/xxx/theme.php</td>
@@ -974,6 +981,7 @@ echo $footer;</textarea></td>
             <ul>
                 <li class="floatleft"><a href="#plugin_hooks_filename_template_html">template_html</a></li>
                 <li class="floatleft"><a href="#plugin_hooks_theme_add_comment">theme_add_comment</a></li>
+                <li class="floatleft"><a href="#plugin_hooks_theme_album_params">theme_album_params</a></li>
                 <li class="floatleft"><a href="#plugin_hooks_filename_thumbnail_params">theme_display_thumbnails_params</a></li>
                 <li class="floatleft"><a href="#plugin_hooks_theme_add_comment">theme_edit_comment</a></li>
                 <li class="floatleft"><a href="#plugin_hooks_filename_theme_pageheader_params">theme_pageheader_params</a></li>
@@ -1300,8 +1308,8 @@ function myfunction_add_params($params)
 
 <div id="doc_footer">
     <div class="doc_info_wrapper">
-        <span id="doc_last_changed">$LastChangedDate: 2012-01-10 13:20:18 +0100 (Di, 10 Jan 2012) $</span>
-        <span id="doc_revision">$Revision: 8304 $</span>
+        <span id="doc_last_changed">$LastChangedDate: 2012-03-29 16:32:35 +0200 (Do, 29 Mrz 2012) $</span>
+        <span id="doc_revision">$Revision: 8359 $</span>
     </div>
 </div>
 </body>

@@ -9,9 +9,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/themes/curve/style.css $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 
@@ -271,6 +271,7 @@ a:active {
     margin-right:2px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .button {
@@ -487,6 +488,7 @@ a:hover.button, a:hover.admin_menu {
     margin:2px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 /* pseudo-classes for image links */
@@ -889,6 +891,7 @@ table#album_sort tr td span.editAlbum {
     background-position: 10px center;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .cpg_message_info {

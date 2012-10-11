@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/include/functions.inc.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 if (!function_exists('stripos')) {
@@ -6499,4 +6499,44 @@ function cpg_pw_protected_album_access($aid) {
     }
 }
 
+
+/**
+ * Get all user group IDs for a particular user
+ * 
+ * @param integer $user_id
+ * @return array
+ */
+function cpg_get_groups($user_id) {
+    global $cpg_udb;
+    $f = $cpg_udb->field;
+    if (isset($cpg_udb->usergroupstable)){
+        $sql = "SELECT u.{$f['user_id']} AS id, ug.{$f['usertbl_group_id']} AS group_id "
+                . "FROM {$cpg_udb->usertable} AS u, {$cpg_udb->usergroupstable} AS ug "
+                . "WHERE u.{$f['user_id']}=ug.{$f['user_id']} AND u.{$f['user_id']}='{$user_id}'";
+    } else {
+        $sql = "SELECT u.{$f['user_id']} AS id, u.{$f['usertbl_group_id']} AS group_id "
+                . "FROM {$cpg_udb->usertable} AS u "
+                . "WHERE u.{$f['user_id']}='{$user_id}'";
+    }
+    return $cpg_udb->get_groups(mysql_fetch_assoc(cpg_db_query($sql)));
+}
+
+
+/**
+ * Strip whitespaces from the beginning and end of each keyword
+ * 
+ * @param string $keywords
+  */
+function cpg_trim_keywords(&$keywords) {
+    global $CONFIG;
+
+    $keywords_new = array();
+    $keywords = explode($CONFIG['keyword_separator'], trim(html_entity_decode($keywords)));
+    foreach ($keywords as $word) {
+        if (trim($word)) {
+            $keywords_new[] = trim(Inspekt::getEscaped($word));
+        }
+    }
+    $keywords = implode($CONFIG['keyword_separator'], $keywords_new);
+}
 ?>

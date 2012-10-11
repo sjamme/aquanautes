@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/chinese_gb.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language';
 $lang_translation_info['lang_name_english'] = 'Chinese Simplified';
@@ -121,7 +121,7 @@ $lang_common['keywords_insert1'] = '关键词 用%s分开)'; // cpg1.5
 $lang_common['keywords_insert2'] = '从列表中插入'; // cpg1.5
 $lang_common['keyword_separator'] = '关键字分离器'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'空格', ','=>'逗号', ';'=>'分号'); // cpg1.5
-///$lang_common['owner_name'] = '画家名称'; // cpg1.5
+$lang_common['owner_name'] = '作者'; // cpg1.5
 $lang_common['filename'] = '作品名'; // cpg1.5
 $lang_common['filesize'] = '作品尺寸'; // cpg1.5
 $lang_common['album'] = '展厅'; // cpg1.5

@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/thumbnails.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 /**
@@ -52,7 +52,7 @@ if ($superCage->get->keyExists('sort')) {
     $USER['sort'] = $superCage->get->getAlpha('sort');
 }
 
-if ($superCage->get->keyExists('cat')) {
+if ($superCage->get->testInt('cat')) {
     $cat = $superCage->get->getInt('cat');
 }
 
@@ -71,7 +71,7 @@ if ($superCage->get->keyExists('album')) {
 if ($superCage->get->keyExists('search')) {
 
     // find out if a parameter has been submitted at all
-    $allowed = array('title', 'caption', 'keywords', 'filename', 'pic_raw_ip', 'pic_hdr_ip', 'user1', 'user2', 'user3', 'user4', 'type');
+    $allowed = array('title', 'caption', 'keywords', 'filename', 'pic_raw_ip', 'pic_hdr_ip', 'user1', 'user2', 'user3', 'user4', 'type', 'owner_name');
 
     foreach ($allowed as $key) {
         if ($superCage->get->keyExists($key)) {
@@ -87,11 +87,7 @@ if ($superCage->get->keyExists('search')) {
     $album = 'search';
 }
 
-if ($superCage->get->keyExists('page')) {
-    $page = max($superCage->get->getInt('page'), 1);
-} else {
-    $page = 1;
-}
+$page = $superCage->get->testInt('page') ? max($superCage->get->getInt('page'), 1) : 1;
 
 $breadcrumb = '';
 $breadcrumb_text = '';

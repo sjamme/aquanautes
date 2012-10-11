@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/arabic.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Arabic';
@@ -115,6 +115,7 @@ $lang_common['keywords_insert1'] = 'الكلمات الإستدلالية (ال�
 $lang_common['keywords_insert2'] = 'إدخال من قائمة'; // cpg1.5
 $lang_common['keyword_separator'] = 'فاصل الكلمات الإستدلالية'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'مسافة', ','=>'فاصلة', ';'=>'فاصلة نقطية'); // cpg1.5
+$lang_common['owner_name'] = 'اسم المالك'; // cpg1.5
 $lang_common['filename'] = 'اسم الصورة'; // cpg1.5
 $lang_common['filesize'] = 'حجم الملف'; // cpg1.5
 $lang_common['album'] = 'ألبوم'; // cpg1.5

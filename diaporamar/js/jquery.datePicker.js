@@ -9,9 +9,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/js/jquery.datePicker.js $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 /**
@@ -19,7 +19,7 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) 
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- * $Id: jquery.datePicker.js 8304 2012-01-10 12:20:18Z eenemeenemuu $
+ * $Id: jquery.datePicker.js 8359 2012-03-29 14:32:35Z eenemeenemuu $
  **/
 
 (function($){
@@ -1044,7 +1044,7 @@
         TEXT_CHOOSE_DATE    :   'Choose date'
     };
     // version
-    $.dpVersion = '$Id: jquery.datePicker.js 8304 2012-01-10 12:20:18Z eenemeenemuu $';
+    $.dpVersion = '$Id: jquery.datePicker.js 8359 2012-03-29 14:32:35Z eenemeenemuu $';
 
     function _getController(ele)
     {

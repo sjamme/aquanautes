@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/danish.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Danish';
@@ -115,6 +115,7 @@ $lang_common['keywords_insert1'] = 'Nøgleord (adskilt med %s)'; // cpg1.5
 $lang_common['keywords_insert2'] = 'Indsæt fra liste'; // cpg1.5
 $lang_common['keyword_separator'] = 'Nøgleords separator'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'mellemrum', ','=>'komma', ';'=>'semikolon'); // cpg1.5
+$lang_common['owner_name'] = 'Ejers navn'; // cpg1.5
 $lang_common['filename'] = 'Filnavn'; // cpg1.5
 $lang_common['filesize'] = 'Filstørrelse'; // cpg1.5
 $lang_common['album'] = 'Album'; // cpg1.5

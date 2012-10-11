@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/russian.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Russian';
@@ -115,6 +115,7 @@ $lang_common['keywords_insert1'] = 'Ключевые слова (раздели�
 $lang_common['keywords_insert2'] = 'Вставить из списка'; // cpg1.5
 $lang_common['keyword_separator'] = 'Разделитель ключевых слов'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'пробел', ','=>'запятая', ';'=>'точка с запятой'); // cpg1.5
+$lang_common['owner_name'] = 'Имя владельца'; // cpg1.5
 $lang_common['filename'] = 'Имя файла'; // cpg1.5
 $lang_common['filesize'] = 'Размер файла'; // cpg1.5
 $lang_common['album'] = 'Альбом'; // cpg1.5

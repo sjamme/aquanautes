@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
   
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/dutch.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Niet in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Dutch';
@@ -115,6 +115,7 @@ $lang_common['keywords_insert1'] = 'Trefwoorden (gescheiden door %s)'; // cpg1.5
 $lang_common['keywords_insert2'] = 'Kies uit een lijst'; // cpg1.5
 $lang_common['keyword_separator'] = 'Scheidingsteken van trefwoorden'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'spatie', ','=>'komma', ';'=>'puntkomma'); // cpg1.5
+$lang_common['owner_name'] = 'Eigenaar'; // cpg1.5
 $lang_common['filename'] = 'Bestandsnaam'; // cpg1.5
 $lang_common['filesize'] = 'Bestandsgrootte'; // cpg1.5
 $lang_common['album'] = 'Album'; // cpg1.5

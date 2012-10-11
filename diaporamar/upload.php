@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/upload.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 // Confirm we are in Coppermine and set the language blocks.
@@ -93,6 +93,7 @@ if ('swfupload' == $upload_form) {
     
     set_js_var('notify_admin', $CONFIG['upl_notify_admin_email']);
     set_js_var('max_upl_size', $CONFIG['max_upl_size']);
+    set_js_var('timestamp', time());
 }
 js_include('js/upload.js');
 

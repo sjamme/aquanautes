@@ -10,10 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/include/captcha.inc.php $
-  $Revision: 8304 $
-
+  $Revision: 8359 $
 **********************************************/
 
  /***************************************************************/
@@ -24,9 +23,7 @@
  /* Last Updated: 26th November 2005                            */
  /***************************************************************/
 
-if (!defined('IN_COPPERMINE')) {
-    die('Not in Coppermine...');
-}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
    // start a PHP session - this class uses sessions to store the generated
    // code. Comment out if you are calling already from your application

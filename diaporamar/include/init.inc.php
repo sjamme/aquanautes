@@ -10,17 +10,15 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/include/init.inc.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-define('COPPERMINE_VERSION', '1.5.18');
+define('COPPERMINE_VERSION', '1.5.20');
 define('COPPERMINE_VERSION_STATUS', 'stable');
 
-if (!defined('IN_COPPERMINE')) {
-    die('Not in Coppermine...');
-}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 function cpgGetMicroTime()
 {
@@ -28,12 +26,6 @@ function cpgGetMicroTime()
     return ((float)$usec + (float)$sec);
 }
 $cpg_time_start = cpgGetMicroTime();
-
-// List of valid meta albums - needed for displaying 'no image to display' message
-$valid_meta_albums = array('lastcom', 'lastcomby', 'lastup', 'lastupby', 'topn', 'toprated', 'lasthits', 'random', 'search', 'lastalb', 'favpics', 'datebrowse');
-
-// HTML tags replace pairs (used at some places for input validation)
-$HTML_SUBST = array('&' => '&amp;', '"' => '&quot;', '<' => '&lt;', '>' => '&gt;', '%26' => '&amp;', '%22' => '&quot;', '%3C' => '&lt;', '%3E' => '&gt;','%27' => '&#39;', "'" => '&#39;');
 
 // Set a flag if register globals is on to show a warning to admin
 if (ini_get('register_globals') == '1' || strtolower(ini_get('register_globals')) == 'on') {
@@ -58,6 +50,12 @@ if ($register_globals_flag && is_array($GLOBALS)) {
         }
     }
 }
+
+// List of valid meta albums - needed for displaying 'no image to display' message
+$valid_meta_albums = array('lastcom', 'lastcomby', 'lastup', 'lastupby', 'topn', 'toprated', 'lasthits', 'random', 'search', 'lastalb', 'favpics', 'datebrowse');
+
+// HTML tags replace pairs (used at some places for input validation)
+$HTML_SUBST = array('&' => '&amp;', '"' => '&quot;', '<' => '&lt;', '>' => '&gt;', '%26' => '&amp;', '%22' => '&quot;', '%3C' => '&lt;', '%3E' => '&gt;','%27' => '&#39;', "'" => '&#39;');
 
 // Store all reported errors in the $cpgdebugger
 require_once('include/debugger.inc.php');

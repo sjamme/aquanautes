@@ -8,9 +8,9 @@ This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 3
 as published by the Free Software Foundation.
 ********************************************
-Coppermine version: 1.5.18
+Coppermine version: 1.5.20
 $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/CHANGELOG.txt $
-$Revision: 8304 $
+$Revision: 8359 $
 *********************************************
 Changelog
 =========
@@ -23,6 +23,30 @@ Changelog
 [S] = Security fix (issues that are related to security)
 *********************************************
 
+2012-03-29 [M] Release of cpg1.5.20 {eenemeenemuu}
+2012-03-29 [B] Fixed different gallery behavior for register_globals on/off setting (thread ID 74360) {eenemeenemuu}
+2012-03-29 [B] Fixed error message when activating more than one user in the user manager (thread ID 74326) {eenemeenemuu}
+2012-03-29 [B] Fixed search results when searching for specific characters (thread ID 74678) {eenemeenemuu}
+2012-03-29 [B] Fixed clickable keywords in file information box at intermediate view (thread ID 74678) {eenemeenemuu}
+2012-03-29 [S] Fixed XSS issue (thread ID 74678) {eenemeenemuu}
+2012-03-28 [S] Fixed several path disclosure vulnerabilities (thread ID 74678) {eenemeenemuu}
+2012-03-26 [O] Updated EXIF library (thread ID 74671) {eenemeenemuu}
+2012-03-23 [B] Fixed error message at "Edit file information" form (thread ID 74648) {eenemeenemuu}
+2012-03-20 [C] Added Opera compatibility for rounded corners to theme 'curve' (thread ID 74598) {eenemeenemuu}
+2012-03-16 [O] Moved code from usermgr.php to function 'cpg_get_groups' {eenemeenemuu}
+2012-03-15 [A] Display default groups "Administrators" and "Registered" on modify user page (thread ID 74391) {eenemeenemuu}
+2012-03-15 [B] Fixed quota bar in user manager for secondary group memberships (thread ID 74392) {eenemeenemuu}
+2012-03-14 [A] Added plugin hook 'theme_album_params' {eenemeenemuu}
+2012-03-14 [B] Fixed behavior of "Show first level album thumbnails in categories" setting (thread ID 74568) {eenemeenemuu}
+2012-03-08 [A] New feature: display only the uploaded files from the last queue after flash upload (thread ID 73826) {eenemeenemuu}
+2012-03-08 [A] Re-added 'search by owner name' checkbox to search form (thread ID 66818 & 67757) {eenemeenemuu}
+2012-03-06 [O] Updated Italian language file (user contribution) {eenemeenemuu}
+2012-02-27 [D] Changed status in credits section to 'retired' {GauGau}
+2012-02-24 [O] Updated Serbian language file (user contribution) {eenemeenemuu}
+2012-02-23 [B] Fixed email validation for registration process (thread ID 74388) {eenemeenemuu}
+2012-01-31 [B] Fixed broken IP address lookup (thread ID 74346) {eenemeenemuu}
+2012-01-27 [B] Disabled possibility to move albums to root level of user category (thread ID 74323) {eenemeenemuu}
+2012-01-10 [M] Counted version count up in SVN repository from cpg1.5.18 to cpg1.5.19 {eenemeenemuu}
 2012-01-10 [M] Release of cpg1.5.18 {eenemeenemuu}
 2012-01-10 [M] Updated header information to reflect new year {eenemeenemuu}
 2012-01-10 [O] Updated date/time formats in English (British) language file (thread ID 72549) {eenemeenemuu}

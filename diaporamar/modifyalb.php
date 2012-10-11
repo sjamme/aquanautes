@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/modifyalb.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 define('IN_COPPERMINE', true);
@@ -241,7 +241,7 @@ EOT;
 EOT;
 
     foreach ($CAT_LIST as $category) {
-        echo '                <option value="' . $category[0] . '"' . ($ALBUM_DATA['category'] == $category[0] ? ' selected="selected"': '') . ">" . $category[1] . '</option>' . $LINEBREAK;
+        echo '                <option value="' . $category[0] . '"' . ($ALBUM_DATA['category'] == $category[0] ? ' selected="selected"': '') . ($category[0] == USER_GAL_CAT ? ' disabled="disabled"' : '') . ">" . $category[1] . '</option>' . $LINEBREAK;
     }
 
     echo <<< EOT

@@ -9,9 +9,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/js/register.js $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 $(document).ready(function() {
@@ -50,7 +50,7 @@ function checkRegisterFormSubmit() {
         $('#email_warning1').show();
         errors++;
     } else {
-        if ($('#email').val().search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) == -1) {
+        if ($('#email').val().search(/^\w+((-|\.|\+)\w+)*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) == -1) {
             $('#email_warning2').show();
             errors++;
         }

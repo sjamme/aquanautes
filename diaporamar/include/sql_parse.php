@@ -10,10 +10,9 @@
   as published by the Free Software Foundation.
   
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/include/sql_parse.php $
-  $Revision: 8304 $
-
+  $Revision: 8359 $
 **********************************************/
 
 /**
@@ -23,7 +22,7 @@
  *      copyright            : (C) 2001 The phpBB Group
  *      email                : support@phpbb.com
  *
- *      $Id: sql_parse.php 8304 2012-01-10 12:20:18Z eenemeenemuu $
+ *      $Id: sql_parse.php 8359 2012-03-29 14:32:35Z eenemeenemuu $
  */
 
 /**

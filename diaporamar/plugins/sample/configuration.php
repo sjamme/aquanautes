@@ -10,12 +10,11 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/plugins/sample/configuration.php $
-  $Revision: 8304 $
-  
-
+  $Revision: 8359 $
 **********************************************/
+
 if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 $name = $lang_plugin_php['sample_config_name'];

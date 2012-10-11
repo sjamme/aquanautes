@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/include/themes.inc.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 /////////////////////////////////////////////////////////////////
@@ -39,7 +39,7 @@
       ***********************************/
 // ----------------------------------------------------------------------------- //
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}         //{THEMES}//
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');         //{THEMES}//
 
 // The following terms can be defined in theme.php
 // ('THEME_HAS_RATING_GRAPHICS', 1) : The location for the ratings graphics will
@@ -2684,6 +2684,7 @@ function theme_display_album_list(&$alb_list, $nbAlb, $cat, $page, $total_pages)
                 '{ALB_INFOS}' => $album['album_info'],
                 '{ALB_HITS}' => $album['alb_hits'],
                 );
+            $params = CPGPluginAPI::filter('theme_album_params', $params);
 
             echo template_eval($album_cell, $params);
 

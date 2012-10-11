@@ -10,15 +10,14 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/plugins/visiblehookpoints/codebase.php $
-  $Revision: 8304 $
-  
+  $Revision: 8359 $
 **********************************************/
 
-$vhp_tableHeaderCounter = 0;
-
 if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
+
+$vhp_tableHeaderCounter = 0;
 $superCage = Inspekt::makeSuperCage();
 // Add an install action
 $thisplugin->add_action('plugin_install','visiblehookpoints_install');

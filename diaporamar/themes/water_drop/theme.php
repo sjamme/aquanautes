@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
   
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/themes/water_drop/theme.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 define('THEME_HAS_PROGRESS_GRAPHICS', 1);

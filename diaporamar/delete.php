@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/delete.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 define('IN_COPPERMINE', true);
@@ -903,7 +903,7 @@ case 'user':
                         
                         if ($user_data['user_actkey']) {
                             // send activation confirmation email (only once)
-                            require('include/mailer.inc.php');
+                            require_once('include/mailer.inc.php');
                             
                             $template_vars = array(
                                 '{SITE_LINK}' => $CONFIG['site_url'],

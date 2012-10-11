@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/include/inspekt/supercage.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 /**
@@ -23,9 +23,7 @@
  * @package Inspekt
  */
 
-if (!defined('IN_COPPERMINE')) {
-	die('Not in Coppermine...');
-}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 /**
  * require main Inspekt class

@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/edit_one_pic.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 define('IN_COPPERMINE', true);
@@ -107,13 +107,7 @@ function process_post_data()
     $new_alb = mysql_fetch_assoc($result);
     mysql_free_result($result);
 
-    $keywords = explode($CONFIG['keyword_separator'], trim(html_entity_decode($keywords)));
-    foreach ($keywords as $word) {
-        if (trim($word)) {
-            $keywords_new[] = trim($word);
-        }
-    }
-    $keywords = implode($CONFIG['keyword_separator'], $keywords_new);
+    cpg_trim_keywords($keywords);
 
     $update  = "aid = '{$aid}'";
 

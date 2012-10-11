@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/db_ecard.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 define('IN_COPPERMINE', true);
@@ -353,7 +353,7 @@ while ($line = mysql_fetch_assoc($result)) {
         </td>
         <td class="$tempClass">
             <span class="thumb_caption">
-                <a href="http://ws.arin.net/cgi-bin/whois.pl?queryinput={$line['sender_ip']}">{$line['sender_ip']}</a>{$line['ip_detail']}
+                <a href="http://whois.domaintools.com/{$line['sender_ip']}">{$line['sender_ip']}</a>{$line['ip_detail']}
             </span>
         </td>
         <td class="$tempClass">

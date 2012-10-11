@@ -9,9 +9,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/js/setup_swf_upload.js $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 var swfu;
@@ -83,7 +83,7 @@ SWFUpload.onload = function () {
 
 function continue_upload() {
     if (js_vars.user_id > 0 || js_vars.allow_guests_enter_file_details == 1) {
-        window.location = js_vars.site_url + '/editpics.php?album=' + $("select[name='album']").val();
+        window.location = js_vars.site_url + '/editpics.php?album=' + $("select[name='album']").val() + '&newer_than=' + js_vars.timestamp;
     } else {
         window.location = js_vars.site_url + '/thumbnails.php?album=' + $("select[name='album']").val();
     }

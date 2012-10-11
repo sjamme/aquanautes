@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/swedish.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Swedish';
@@ -115,6 +115,7 @@ $lang_common['keywords_insert1'] = 'Nyckelord (avdelade med %s)'; // cpg1.5
 $lang_common['keywords_insert2'] = 'Infoga från lista'; // cpg1.5
 $lang_common['keyword_separator'] = 'Nyckelordsavdelare'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'blanktecken', ','=>'komma', ';'=>'semikolon'); // cpg1.5
+$lang_common['owner_name'] = 'Ägarens namn'; // cpg1.5
 $lang_common['filename'] = 'Filnamn'; // cpg1.5
 $lang_common['filesize'] = 'Filstorlek'; // cpg1.5
 $lang_common['album'] = 'Album'; // cpg1.5
@@ -2580,7 +2581,7 @@ $lang_plugin_php['onlinestats_remove'] = 'Radera tabellen som använts för att 
 $lang_plugin_php['link_target_name'] = 'Mållänk';
 $lang_plugin_php['link_target_description'] = 'Ändrar det sätt som externa länkar öppnas: när den här insticksmodulen aktiveras, kommer alla länkas som har attributet rel="external" att öppnas i ett nytt fönster (istället för i samma fönster).';
 $lang_plugin_php['link_target_extra'] = 'Denna insticksmodul påverkar mest "Powered by Coppermine" länken i nederst på sidan.';
-	$lang_plugin_php['link_target_recommendation'] = 'Det rekommenderas att inte använda den här insticksmodulen, eftersom användarna upplever det som jobbigt när varje länk öppnas i nytt fönster.';
+$lang_plugin_php['link_target_recommendation'] = 'Det rekommenderas att inte använda den här insticksmodulen, eftersom användarna upplever det som jobbigt när varje länk öppnas i nytt fönster.';
 }
 
 ?>

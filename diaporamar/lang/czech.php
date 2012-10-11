@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
   
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/czech.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Czech';
@@ -117,6 +117,7 @@ $lang_common['keywords_insert1'] = 'Klíčová slova (oddělovač %s)'; // cpg1.
 $lang_common['keywords_insert2'] = 'Vložit ze seznamu'; // cpg1.5
 $lang_common['keyword_separator'] = 'Oddělovač klíčových slov'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'mezera', ','=>'čárka', ';'=>'středník'); // cpg1.5
+$lang_common['owner_name'] = 'Název vlastníka'; // cpg1.5
 $lang_common['filename'] = 'Název souboru'; // cpg1.5
 $lang_common['filesize'] = 'Velikost souboru'; // cpg1.5
 $lang_common['album'] = 'Album'; // cpg1.5

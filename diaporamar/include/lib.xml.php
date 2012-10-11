@@ -10,10 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/include/lib.xml.php $
-  $Revision: 8304 $
-
+  $Revision: 8359 $
   ********************************************
   Code below has been taken from lib.xml.php and slightly modified for use with coppermine
   Orginal: http://www.phpclasses.org/browse/file/17412.html

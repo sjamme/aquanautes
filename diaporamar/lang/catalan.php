@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/catalan.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Catalan';
@@ -115,6 +115,7 @@ $lang_common['keywords_insert1'] = 'Paraules clau (separades per %s)'; // cpg1.5
 $lang_common['keywords_insert2'] = 'Insereix de la llista'; // cpg1.5
 $lang_common['keyword_separator'] = 'Separador de paraules clau'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'espai', ','=>'coma', ';'=>'punt i coma'); // cpg1.5
+$lang_common['owner_name'] = 'Nom del propietari/ària'; // cpg1.5
 $lang_common['filename'] = 'Nom del fitxer'; // cpg1.5
 $lang_common['filesize'] = 'Mida del fitxer'; // cpg1.5
 $lang_common['album'] = 'Àlbum'; // cpg1.5

@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/spanish_mx.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Mexican Spanish';
@@ -111,6 +111,7 @@ $lang_common['keywords_insert1'] = 'Palabras Clave (separadas por %s)'; // cpg1.
 $lang_common['keywords_insert2'] = 'Inserta desde la lista'; // cpg1.5
 $lang_common['keyword_separator'] = 'Separador de Palabras Clave'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'Espacio', ','=>'Coma', ';'=>'Punto y Coma'); // cpg1.5
+$lang_common['owner_name'] = 'Nombre del Propietario'; // cpg1.5
 $lang_common['filename'] = 'Nombre de foto'; // cpg1.5
 $lang_common['filesize'] = 'Tamaño de foto'; // cpg1.5
 $lang_common['album'] = 'Álbum'; // cpg1.5

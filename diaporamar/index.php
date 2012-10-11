@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/index.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 /**
@@ -32,7 +32,7 @@ if ($superCage->get->keyExists('page')) {
     $page = $superCage->get->getInt('page');
 }
 
-if ($superCage->get->keyExists('cat')) {
+if ($superCage->get->testInt('cat')) {
     $cat = $superCage->get->getInt('cat');
 }
 
@@ -490,8 +490,8 @@ function get_subcat_data(&$cat_data)
                 $user_thumb = str_repeat($indent, $level-1);
                 $cat_data[] = array($link, $cat['details']['description'], 'cat_thumb' => $user_thumb);
             } else {
-                // Check if you need to show subcat_level
-                if ($level < $CONFIG['subcat_level']) {
+                // Check if you need to show first level album thumbnails
+                if ($level <= $CONFIG['subcat_level']) {
                     $cat_albums = list_cat_albums($cid, $cat);
                 } else {
                     $cat_albums = '';

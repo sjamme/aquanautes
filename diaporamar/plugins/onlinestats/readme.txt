@@ -9,9 +9,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/plugins/onlinestats/readme.txt $
-  $Revision: 8304 $
+  $Revision: 8359 $
   **********************************************
   Plugin "Who is online" aka "onlinestats" for cpg1.5.x
   This plugin has been re-designed to work with cpg1.5.x only. Do not use it with cpg1.4.x

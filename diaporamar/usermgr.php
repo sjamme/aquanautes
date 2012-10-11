@@ -10,9 +10,9 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/usermgr.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 define('IN_COPPERMINE', true);
@@ -177,11 +177,7 @@ function list_users($search = '')
     }
 
     $user_per_page = 25;
-    if ($superCage->get->keyExists('page')) {
-        $page = $superCage->get->getInt('page');
-    } else {
-        $page = 1;
-    }
+    $page = $superCage->get->testInt('page') ? $superCage->get->getInt('page') : 1;    $lower_limit = ($page-1) * $user_per_page;
     $lower_limit = ($page-1) * $user_per_page;
     
     if ($search) {
@@ -463,6 +459,9 @@ EOT;
             $user['disk_usage'] = 0;
         }
         $group_quota_separator = '/';
+        // Determine actual quota if user belongs to more than one user group
+        $quota = mysql_fetch_assoc(cpg_db_query("SELECT MAX(group_quota) AS disk_max, MIN(group_quota) AS disk_min FROM {$CONFIG['TABLE_USERGROUPS']} WHERE group_quota >= 0 AND group_id IN (".implode(", ", cpg_get_groups($user['user_id'])).")"));
+        $user['group_quota'] = $quota["disk_min"] ? $quota["disk_max"] : 0;
         if ($user['group_quota']) {
             $disk_usage_output = theme_display_bar($user['disk_usage'],$user['group_quota'],150,'', '', $group_quota_separator.$user['group_quota'].'&nbsp;'.$lang_byte_units[1],'red','green');
         } else {
@@ -893,11 +892,7 @@ EOT;
                 $group_cb = '';
                 foreach($group_list as $group) {
                     echo '                        <option value="' . $group['group_id'] . '"' . ($group['group_id'] == $sel_group || ($op == 'new_user' && $group['group_id'] == 2) ? ' selected="selected"' : '') . '>' . $group['group_name'] . '</option>' . $LINEBREAK;
-    
-                    /**
-                     * Only show 'real' groups; skip admin, registered, anonymous
-                     */
-                    if ($group['group_id'] > 3) {
+                    if ($group['group_id'] != 3) {
                       $checked = strpos(' ' . $user_group_list, ',' . $group['group_id'] . ',') ? 'checked="checked"' : '';
                       $group_cb .= '<input name="group_list[]" type="checkbox" value="' . $group['group_id'] . '" ' . $checked . ' />' . $group['group_name'] . '<br />' . $LINEBREAK;
                     }

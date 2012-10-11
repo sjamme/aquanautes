@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/greek.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Greek';
@@ -65,7 +65,6 @@ $lang_meta_album_names['category_search'] = 'Αποτελέσματα αναζή
 $lang_meta_album_names['favpics'] = 'Αγαπημένα αρχεία';
 $lang_meta_album_names['datebrowse'] = 'Περιήγηση κατά ημερομηνία'; //cpg1.5
 
-
 $lang_errors['access_denied'] = 'Δεν έχετε άδεια για πρόσβαση σ\' αυτή τη σελίδα.';
 $lang_errors['invalid_form_token'] = 'Δεν μπόρεσε να βρεθεί έγκυρο σύμβολο φόρμας.'; //cpg1.5
 $lang_errors['perm_denied'] = 'Δεν έχετε άδεια για την εκτέλεση αυτής της λειτουργίας.';
@@ -95,8 +94,10 @@ $lang_errors['access_intermediate_only'] = 'Δεν σας επιτρέπεται
 $lang_errors['access_none'] = 'Δεν σας επιτρέπεται να δείτε οποιεσδήποτε φωτογραφίες.'; // cpg1.5
 $lang_errors['register_globals_title'] = 'Η PHP παράμετρος Register Globals είναι ενεργοποιημένη!';// cpg1.5
 $lang_errors['register_globals_warning'] = 'Η PHP παράμετρος register_globals είναι ενεργοποιημένη στον διακομιστή σας, κάτι το οποίο δεν είναι καλή ιδέα από πλευρά ασφάλειας. Συστήνεται εντόνως να την απενεργοποιήσετε.'; //cpg1.5
+
 $lang_bbcode_help_title = 'Βοήθεια bbcode';
 $lang_bbcode_help = 'Μπορείτε να προσθέσετε ενεργούς συνδέσμους και κάποιου είδους μορφοποίησης κειμένου σε αυτό το πεδίο χρησιμοποιώντας τις παρακάτω bbcode ετικέτες: <li>[b]Έντονα[/b] =&gt; <strong>Έντονα</strong></li><li>[i]Πλάγια[/i] =&gt; <i>Πλάγια</i></li><li>[url=http://yoursite.com/]Κείμενο Url[/url] =&gt; <a href="http://yoursite.com">Κείμενο Url</a></li><li>[email]user@domain.com[/email] =&gt; <a href="mailto:user@domain.com">user@domain.com</a></li><li>[color=red]κάποιο κείμενο[/color] =&gt; <span style="color:red">κάποιο κείμενο</span></li><li>[img]http://documentation.coppermine-gallery.net/images/browser.png[/img] =&gt; <img src="docs/images/browser.png" border="0" alt="" /></li>';
+
 $lang_common['yes'] = 'Ναι'; // cpg1.5
 $lang_common['no'] = 'Όχι'; // cpg1.5
 $lang_common['back'] = 'Πίσω'; // cpg1.5
@@ -114,6 +115,7 @@ $lang_common['keywords_insert1'] = 'Λέξεις-κλειδιά (χωρισμέ�
 $lang_common['keywords_insert2'] = 'Εισαγωγή από την λίστα'; // cpg1.5
 $lang_common['keyword_separator'] = 'Σύμβολο διαχωρισμού λέξεων-κλειδιών'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'κενό', ','=>'κόμμα', ';'=>'άνω τελεία'); // cpg1.5
+$lang_common['owner_name'] = 'Όνομα ιδιοκτήτη'; // cpg1.5
 $lang_common['filename'] = 'Όνομα αρχείου'; // cpg1.5
 $lang_common['filesize'] = 'Μέγεθος αρχείου'; // cpg1.5
 $lang_common['album'] = 'Άλμπουμ'; // cpg1.5

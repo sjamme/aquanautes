@@ -9,9 +9,9 @@
   as published by the Free Software Foundation.
   
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/docs/nl/script.js $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
 var linebreak = '\n';
@@ -1473,7 +1473,7 @@ function cpgDocHeader() {
     if (getUrlParameters('hide_nav') == 1) {
         return;
     }
-    $('#docheader').text('Coppermine Photo Gallery v1.5.18: Documentatie en Handleiding');
+    $('#docheader').text('Coppermine Photo Gallery v1.5.20: Documentatie en Handleiding');
     $('#docheader').after('<br clear="all" />\n<a name="top" class="en" class="en"></a>');
     $('#docheader').before('<img src="../images/coppermine-logo.png" alt="Coppermine Photo Gallery - Uw Online Fotogalerij" align="left" />\n');
 }

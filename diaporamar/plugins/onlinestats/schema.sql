@@ -9,9 +9,9 @@
 ##  as published by the Free Software Foundation.
 ##
 ##  ********************************************
-##  Coppermine version: 1.5.18
+##  Coppermine version: 1.5.20
 ##  $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/plugins/onlinestats/schema.sql $
-##  $Revision: 8304 $
+##  $Revision: 8359 $
 ##  ********************************************
 
 CREATE TABLE IF NOT EXISTS `CPG_mod_online` (

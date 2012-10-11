@@ -10,18 +10,15 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/plugins/visiblehookpoints/index.php $
-  $Revision: 8304 $
-  
+  $Revision: 8359 $
 **********************************************/
 
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // Call basic functions, etc.
 require_once('include/init.inc.php');
-
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
-
 
 //####################################################################################################
 //#############################  INIT OF SCRIPT VARIABLES  ###########################################
@@ -31,9 +28,9 @@ if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
 //$action = isset($_POST['action']) ? $_POST['action']: $_GET['action'];
 //$superCage->get->getInt('hookpoints'){gaugau}
 if($superCage->post->keyExists('action')){
-	$action = $superCage->post->getAlpha('action');
+    $action = $superCage->post->getAlpha('action');
 }else{
-	$action = $superCage->get->getAlpha('action');
+    $action = $superCage->get->getAlpha('action');
 }
 
 
@@ -53,8 +50,8 @@ if (!GALLERY_ADMIN_MODE) {
 
 switch ($action) {
   case 'config':
-	if ($superCage->post->keyExists('visiblehookpoints_display')) {
-	  if ($superCage->post->getInt('visiblehookpoints_display') == 1) {
+    if ($superCage->post->keyExists('visiblehookpoints_display')) {
+      if ($superCage->post->getInt('visiblehookpoints_display') == 1) {
         $value = 1;
       } elseif ($superCage->post->getInt('visiblehookpoints_display') == 0) {
           $value = 0;

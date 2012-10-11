@@ -10,12 +10,12 @@
   as published by the Free Software Foundation.
 
   ********************************************
-  Coppermine version: 1.5.18
+  Coppermine version: 1.5.20
   $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/lang/bulgarian.php $
-  $Revision: 8304 $
+  $Revision: 8359 $
 **********************************************/
 
-if (!defined('IN_COPPERMINE')) { die('Not in Coppermine...');}
+if (!defined('IN_COPPERMINE')) die('Not in Coppermine...');
 
 // info about translators and translated language
 $lang_translation_info['lang_name_english'] = 'Bulgarian';
@@ -115,6 +115,7 @@ $lang_common['keywords_insert1'] = 'Ключови думи (разделени 
 $lang_common['keywords_insert2'] = 'Вмъкни от списък'; // cpg1.5
 $lang_common['keyword_separator'] = ' Разделител за ключови думи'; //cpg1.5
 $lang_common['keyword_separators'] = array(' '=>'интервал', ','=>'запетая', ';'=>'точка и запетая'); // cpg1.5
+$lang_common['owner_name'] = 'Име на собственик'; // cpg1.5
 $lang_common['filename'] = 'Име на файл'; // cpg1.5
 $lang_common['filesize'] = 'Размер на файл'; // cpg1.5
 $lang_common['album'] = 'Албум'; // cpg1.5
