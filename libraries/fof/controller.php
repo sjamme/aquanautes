@@ -13,7 +13,7 @@ jimport('joomla.application.component.controller');
 require_once(dirname(__FILE__).'/input.php');
 
 /**
- * Guess what? JController is an interface in Joomla! 3.0. Holly smoke, Batman! 
+ * Guess what? JController is an interface in Joomla! 3.0. Holly smoke, Batman!
  */
 if(!class_exists('FOFWorksAroundJoomlaToGetAController')) {
 	if(interface_exists('JController')) {
@@ -117,11 +117,13 @@ class FOFController extends FOFWorksAroundJoomlaToGetAController
 		$classType = FOFInflector::pluralize($config['view']);
 		$className = ucfirst(str_replace('com_', '', $config['option'])).'Controller'.ucfirst($classType);
 		if (!class_exists( $className )) {
-			$app = JFactory::getApplication();
-			if($app->isSite()) {
-				$basePath = JPATH_SITE;
-			} else {
+			list($isCli, $isAdmin) = FOFDispatcher::isCliAdmin();
+			if($isAdmin) {
 				$basePath = JPATH_ADMINISTRATOR;
+			} elseif($isCli) {
+				$basePath = JPATH_ROOT;
+			} else {
+				$basePath = JPATH_SITE;
 			}
 
 			$searchPaths = array(
@@ -149,11 +151,13 @@ class FOFController extends FOFWorksAroundJoomlaToGetAController
 		}
 
 		if (!class_exists( $className )) {
-			$app = JFactory::getApplication();
-			if($app->isSite()) {
-				$basePath = JPATH_SITE;
-			} else {
+			list($isCli, $isAdmin) = FOFDispatcher::isCliAdmin();
+			if($isAdmin) {
 				$basePath = JPATH_ADMINISTRATOR;
+			} elseif($isCli) {
+				$basePath = JPATH_ROOT;
+			} else {
+				$basePath = JPATH_SITE;
 			}
 
 			$searchPaths = array(
@@ -504,6 +508,42 @@ class FOFController extends FOFWorksAroundJoomlaToGetAController
 	}
 
 	/**
+	 * Duplicates selected items
+	 */
+	public function copy()
+	{
+		// CSRF prevention
+		if($this->csrfProtection) {
+			$this->_csrfProtection();
+		}
+
+		$model = $this->getThisModel();
+		if(!$model->getId()) $model->setIDsFromRequest();
+
+		$status = $model->copy();
+
+		//check if i'm using an AJAX call, in this case there is no need to redirect
+		$format = FOFInput::getString('format','', $this->input);
+		if($format == 'json')
+		{
+			echo json_encode($status);
+			return;
+		}
+
+		// redirect
+		if($customURL = FOFInput::getString('returnurl','',$this->input)) $customURL = base64_decode($customURL);
+		$url = !empty($customURL) ? $customURL : 'index.php?option='.$this->component.'&view='.FOFInflector::pluralize($this->view);
+		if(!$status)
+		{
+			$this->setRedirect($url, $model->getError(), 'error');
+		}
+		else
+		{
+			$this->setRedirect($url);
+		}
+	}
+
+	/**
 	 * Save the incoming data and then return to the Browse task
 	 */
 	public function save()
@@ -784,7 +824,7 @@ class FOFController extends FOFWorksAroundJoomlaToGetAController
 				$auto = true;
 			}
 
-			if($auto) $url = JRoute::_($url);
+			if($auto) $url = JRoute::_($url, false);
 		}
 
 		parent::setRedirect($url, $msg, $type);
@@ -1084,11 +1124,13 @@ class FOFController extends FOFWorksAroundJoomlaToGetAController
 			if(!class_exists($viewClass)) {
 				$viewClass = 'FOFView'.ucfirst($type);
 
-				$app = JFactory::getApplication();
-				if($app->isSite()) {
-					$basePath = JPATH_SITE;
-				} else {
+				list($isCli, $isAdmin) = FOFDispatcher::isCliAdmin();
+				if($isAdmin) {
 					$basePath = JPATH_ADMINISTRATOR;
+				} elseif($isCli) {
+					$basePath = JPATH_ROOT;
+				} else {
+					$basePath = JPATH_SITE;
 				}
 
 				if(!array_key_exists('template_path', $config)) {
@@ -1137,7 +1179,7 @@ class FOFController extends FOFWorksAroundJoomlaToGetAController
 			return JFactory::getUser()->authorise($area, $this->component);
 		} else {
 			$user = JFactory::getUser();
-			return $user->authorise($this->component, $area);
+			return $user->authorize($this->component, $area);
 		}
 	}
 

@@ -35,6 +35,9 @@ class Com_AkeebaInstallerScript
 			),
 			'jmonitoring' => array(
 				'akeebabackup'			=> 1,
+			),
+			'quickicon' => array(
+				'akeebabackup'			=> 1,
 			)
 		)
 	);
@@ -47,8 +50,6 @@ class Com_AkeebaInstallerScript
 			'plugins/system/akeebaupdatecheck.xml',
 			'plugins/system/aklazy.php',
 			'plugins/system/aklazy.xml',
-			'plugins/system/oneclickaction.php',
-			'plugins/system/oneclickaction.xml',
 			'plugins/system/srp.php',
 			'plugins/system/srp.xml'
 		),
@@ -56,7 +57,6 @@ class Com_AkeebaInstallerScript
 			'administrator/components/com_akeeba/akeeba/engines/finalization',
 			'plugins/system/akeebaupdatecheck',
 			'plugins/system/aklazy',
-			'plugins/system/oneclickaction',
 			'plugins/system/srp',
 			'administrator/components/com_akeeba/plugins',
 			'administrator/components/com_akeeba/akeeba/plugins',
@@ -321,7 +321,7 @@ class Com_AkeebaInstallerScript
 <?php endif; ?>
 
 <div style="margin: 1em; font-size: 14pt; background-color: #fffff9; color: black">
-	You can download translation files <a href="http://akeeba-cdn.s3-website-eu-west-1.amazonaws.com/language/akeebabackup/">directly from our CDN page</a>.
+	You can download translation files <a href="http://cdn.akeebabackup.com/language/akeebabackup/index.html">directly from our CDN page</a>.
 </div>
 
 <table class="adminlist">

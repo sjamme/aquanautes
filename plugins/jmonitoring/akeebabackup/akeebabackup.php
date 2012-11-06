@@ -172,7 +172,7 @@ class plgJmonitoringAkeebabackup extends JMonitoringPluginMonitoring
 			$backupStatus = $record->status;
 			$this->createJMonitoringValue('Akeeba Backup – Status', $status);
 			$this->createJMonitoringValue('Akeeba Backup – Origin', $origin);
-			$this->createJMonitoringValue('Akeeba Backup – Start', $jOn->format(JText::_('DATE_FORMAT_LC2')));
+			$this->createJMonitoringValue('Akeeba Backup – Start', $jOn->format(JText::_('DATE_FORMAT_LC2'), true));
 		}
 		
 		return $this;

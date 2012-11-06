@@ -3,17 +3,19 @@
     <name>lib_fof</name>
 	<libraryname>fof</libraryname>
 	<description>Framework-on-Framework (FOF) – A rapid component development framework extension for Joomla!</description>
-	<creationDate>2012-08-23</creationDate>
+	<creationDate>2012-10-20</creationDate>
 	<author>Nicholas K. Dionysopoulos / AkeebaBackup.com</author>
 	<authorEmail>nicholas@akeebabackup.com</authorEmail>
 	<authorUrl>https://www.akeebabackup.com</authorUrl>
 	<copyright>(C)2011-2012 Nicholas K. Dionysopoulos</copyright>
 	<license>GNU GPLv3 or later</license>
-	<version>rev0D01565</version>
+	<version>rev2A885DF</version>
 	<packager>AkeebaBackup.com</packager>
 	<packagerurl>https://www.AkeebaBackup.com</packagerurl>
 	<scriptfile>script.fof.php</scriptfile>
 	<files folder="fof">
+		<folder>encrypt</folder>
+
 		<file>LICENSE.txt</file>
 		<file>version.txt</file>
 		<file>index.html</file>

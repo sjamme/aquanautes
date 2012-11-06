@@ -142,12 +142,19 @@ JFactory::getDocument()->addScriptDeclaration($script,'text/javascript');
 		</div>
 		
 		<div class="icon">
+			<?php if(version_compare(JVERSION, '3.0', 'lt')): ?>
 			<a href="index.php?option=com_config&view=component&component=com_akeeba&path=&tmpl=component"
 				class="modal"
 				rel="{handler: 'iframe', size: {x: 660, y: 500}}">
 				<div class="ak-icon ak-icon-componentparams">&nbsp;</div>
 				<span><?php echo JText::_('CPANEL_LABEL_COMPONENTCONFIG'); ?></span>
 			</a>
+			<?php else: ?>
+			<a href="index.php?option=com_config&view=component&component=com_akeeba&path=&return=<?php echo base64_encode(JURI::getInstance()->toString()) ?>">
+				<div class="ak-icon ak-icon-componentparams">&nbsp;</div>
+				<span><?php echo JText::_('CPANEL_LABEL_COMPONENTCONFIG'); ?></span>
+			</a>
+			<?php endif; ?>
 		</div>
 
 		<?php echo LiveUpdate::getIcon(); ?>

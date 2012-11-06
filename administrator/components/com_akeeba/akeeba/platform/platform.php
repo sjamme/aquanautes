@@ -10,7 +10,7 @@
  */
 
 // Protection against direct access
-defined('AKEEBAENGINE') or die('Restricted access');
+defined('AKEEBAENGINE') or die();
 
 require_once 'interface.php';
 require_once 'abstract.php';

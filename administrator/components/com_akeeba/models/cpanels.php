@@ -276,7 +276,7 @@ class AkeebaModelCpanels extends FOFModel
 		
 		// Loop all profiles and decrypt their settings
 		$profilesModel = FOFModel::getTmpInstance('Profiles','AkeebaModel');
-		$profiles = $profilesModel->getItemsList(true);
+		$profiles = $profilesModel->getList(true);
 		$db = $this->getDBO();
 		foreach($profiles as $profile)
 		{
@@ -301,7 +301,7 @@ class AkeebaModelCpanels extends FOFModel
 		
 		// Loop all profiles and encrypt their settings
 		$profilesModel = FOFModel::getTmpInstance('Profiles','AkeebaModel');
-		$profiles = $profilesModel->getItemsList(true);
+		$profiles = $profilesModel->getList(true);
 		$db = $this->getDBO();
 		if(!empty($profiles)) foreach($profiles as $profile)
 		{

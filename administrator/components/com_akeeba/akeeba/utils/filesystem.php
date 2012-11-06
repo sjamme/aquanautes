@@ -9,7 +9,7 @@
  */
 
 // Protection against direct access
-defined('AKEEBAENGINE') or die('Restricted access');
+defined('AKEEBAENGINE') or die();
 
 /**
  * Utility functions related to filesystem objects, e.g. path translation

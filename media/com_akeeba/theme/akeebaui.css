@@ -49,6 +49,7 @@ div.akeeba-bootstrap button, div.akeeba-bootstrap input, div.akeeba-bootstrap se
 .akeeba-formstyle-reset input { float: none !important; }
 .akeeba-formstyle-reset select { float: none !important; }
 .akeeba-formstyle-reset button { float: none !important; }
+div.akeeba-bootstrap .close  { float: right; }
 /**/
 
 /*
@@ -328,3 +329,7 @@ div#toolbar div#toolbar-back button.btn span.icon-back::before {
 div#toolbar div#toolbar-restore button.btn span.icon-restore::before {
 	content: "R";
 }
+/**
+ * Joomla! 3.0+ workaround for popover styling
+ */
+.akeeba-bootstrap-popover { border: none; background: transparent; box-shadow: none; }

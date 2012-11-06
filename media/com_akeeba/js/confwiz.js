@@ -8,6 +8,16 @@
  * @version $Id: confwiz.js 527 2011-03-31 14:47:36Z nikosdion $
  **/
 
+/**
+ * Setup (required for Joomla! 3)
+ */
+if(typeof(akeeba) == 'undefined') {
+	var akeeba = {};
+}
+if(typeof(akeeba.jQuery) == 'undefined') {
+	akeeba.jQuery = jQuery.noConflict();
+}
+
 var akeeba_confwiz_exectimes_table = [30,25,20,14,7,5,3];
 var akeeba_confwiz_blocksizes_table = [240, 200, 160, 80, 40, 16, 4, 2, 1];
 

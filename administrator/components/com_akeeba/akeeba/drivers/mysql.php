@@ -8,7 +8,7 @@
  */
 
 // Protection against direct access
-defined('AKEEBAENGINE') or die('Restricted access');
+defined('AKEEBAENGINE') or die();
 
 /**
  * MySQL classic driver for Akeeba Engine
@@ -81,7 +81,11 @@ class AEDriverMysql extends AEAbstractDriver
 
 	public function open()
 	{
-		if(is_resource($this->connection)) return;
+		if($this->connected()) {
+			return;
+		} else {
+			$this->close();
+		}
 		
 		// perform a number of fatality checks, then return gracefully
 		if (!function_exists( 'mysql_connect' )) {
@@ -106,6 +110,8 @@ class AEDriverMysql extends AEAbstractDriver
 		{
 			$this->select($this->_database);
 		}
+		
+		$this->setUTF();
 	}
 
 	public function close()

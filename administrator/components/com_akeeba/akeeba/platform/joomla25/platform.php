@@ -9,7 +9,7 @@
  */
 
 // Protection against direct access
-defined('AKEEBAENGINE') or die('Restricted access');
+defined('AKEEBAENGINE') or die();
 
 if(!defined('DS')) {
 	define('DS',DIRECTORY_SEPARATOR); // Still required by Joomla! :(
@@ -43,29 +43,6 @@ class AEPlatformJoomla25 extends AEPlatformAbstract
 		if(!class_exists('JApplication')) return false;
 		
 		return version_compare(JVERSION, '2.5.0', 'ge');
-	}
-	
-	
-	/**
-	 * Registers Akeeba's class autoloader with Joomla!
-	 */
-	public function register_autoloader()
-	{
-		// Try to register AEAutoloader with SPL, or fall back to making use of JLoader
-		// Obviously, performance is better with SPL, but not all systems support it.
-		if( function_exists('spl_autoload_register') )
-		{
-			// Joomla! is using its own autoloader function which has to be registered first...
-			if(function_exists('__autoload')) spl_autoload_register('__autoload');
-			// ...and then register ourselves.
-			spl_autoload_register('AEAutoloader');
-		}
-		else
-		{
-			// Guys, it's 2011 at the time of this writing. If you have a host which
-			// doesn't support SPL yet, SWITCH HOSTS!
-			throw new Exception('Akeeba Backup REQUIRES the SPL extension to be loaded and activated',500);
-		}
 	}
 
 	/**
@@ -233,8 +210,8 @@ class AEPlatformJoomla25 extends AEPlatformAbstract
 		$user = JFactory::getUser();
 		$tz = $user->getParam('timezone', $tzDefault);
 		
-		$dateNow = new JDate('now',$tz);
-		return $dateNow->format($format);
+		$dateNow = new JDate('now', $tz);
+		return $dateNow->format($format, true);
 	}
 	
 

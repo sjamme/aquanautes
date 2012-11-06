@@ -9,7 +9,7 @@
  */
 
 // Protection against direct access
-defined('AKEEBAENGINE') or die('Restricted access');
+defined('AKEEBAENGINE') or die();
 
 // @todo Remove me!
 // Large file threshold (default: 10Mb)
@@ -340,14 +340,18 @@ ENDVCONTENT;
 			$siteroot = '[SITEROOT]';
 		}
 		$root = $this->root;
-		//$translated_root = AEUtilFilesystem::TranslateWinPath($this->root);
 		if($this->root == $siteroot) {
 			$translated_root = AEUtilFilesystem::translateStockDirs($siteroot, true);
 		} else {
 			$translated_root = $this->remove_path_prefix;
 		}
 		$dir = AEUtilFilesystem::TrimTrailingSlash($this->current_directory);
-
+		
+		if(strtoupper(substr(PHP_OS,0,3)) == 'WIN') {
+			$translated_root = AEUtilFilesystem::TranslateWinPath($translated_root);
+			$dir = AEUtilFilesystem::TranslateWinPath($dir);
+		}
+		
 		if(substr($dir,0,strlen($translated_root)) == $translated_root) {
 			$dir = substr($dir,strlen($translated_root));
 		} elseif(in_array(substr($translated_root,-1),array('/','\\'))) {
@@ -365,8 +369,8 @@ ENDVCONTENT;
 		if(!$this->done_subdir_scanning)
 		{
 			// Apply DEF (directory exclusion filters)
-			//if (in_array( $this->current_directory, $this->_ExcludeDirs )) {
-			if($filters->isFiltered($dir, $root, 'dir', 'all') ) {
+			// Note: the !empty($dir) prevents the site's root from being filtered out
+			if($filters->isFiltered($dir, $root, 'dir', 'all') && !empty($dir) ) {
 				AEUtilLogger::WriteLog(_AE_LOG_INFO, "Skipping directory ".$this->current_directory);
 				$this->done_subdir_scanning = true;
 				$this->done_file_scanning = true;
@@ -374,7 +378,6 @@ ENDVCONTENT;
 			}
 
 			// Apply Skip Contained Directories Filters
-			//if (in_array( $this->current_directory, $this->_skipContainedDirectories )) {
 			if($filters->isFiltered($dir, $root, 'dir', 'children') ) {
 				AEUtilLogger::WriteLog(_AE_LOG_INFO, "Skipping subdirectories of directory ".$this->current_directory);
 				$this->done_subdir_scanning = true;

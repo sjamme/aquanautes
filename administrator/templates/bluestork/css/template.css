@@ -2133,6 +2133,7 @@ a.jgrid:hover {	text-decoration: none;}
 .icon-32-featured					{	background-image: url(../images/toolbar/icon-32-featured.png);	}
 .icon-32-stats						{	background-image: url(../images/toolbar/icon-32-stats.png);	}
 .icon-32-print						{	background-image: url(../images/toolbar/icon-32-print.png);	}
+.icon-32-extension					{	background-image: url(../images/toolbar/icon-32-extension.png);	}
 .toolbar-inactive					{	background-position: 0 32px;  }
 
 /* -- HEADER ICON STYLES ----------------------------- */
@@ -3247,3 +3248,10 @@ span.update-badge {
 	padding-left: 20px;
 	background: transparent url(../images/admin/icon-16-allow.png) center left no-repeat;
 }
+
+/* Spinner */
+.joomlaupdate_spinner {
+	float: left;
+	margin-right: 15px;
+}
+

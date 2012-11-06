@@ -1,4 +1,53 @@
 <?php die();?>
+Akeeba Backup 3.6.8
+================================================================================
+# [LOW] Sometimes the interface renders strangely (e.g. when a plugin sets format="")
+
+Akeeba Backup 3.6.7
+================================================================================
+# [HIGH] Front-end backup doesn't work
+
+Akeeba Backup 3.6.6
+================================================================================
++ Warning when your tmp or log folder are equal to the site root which would result in incomplete backup
++ Profile import/export (including all profile settings, of course!)
+~ Small visual improvements in the Configuration page
+~ Improved integrated help rendering
+# [HIGH] CLI backups of databases containing data or tables with non-ASCII characters would fail
+# [HIGH] J3 Enabling System Restore Points made it impossible to install extensions on the site
+# [MEDIUM] Sometimes no profiles are shown in the Profiles Management page
+# [MEDIUM] Profile settings would be reset when turning encryption on/off
+# [MEDIUM] ABI Using passwords with double quotes would result in inability to use the restored site (thanks @nternetinspired)
+# [LOW] J3 Tooltips in Configuration page are surrounded by a smaller white box
+# [LOW] J3 Component Parameters icon opened a modal box instead of simply redirecting to com_config
+# [LOW] J3 Incomaptibility of jQuery UI with Joomla!'s jQuery version leading to broken Multiple Databases and Off-Site Folders inclusion filters
+* All items marked with "J3" only apply to Joomla! 3. Items marked with ABI apply to Akeeba Backup Installer
+
+Akeeba Backup 3.6.6.rc1 RELEASE CANDIDATE
+================================================================================
++ Support for Joomla! 3.0 stable
++ Configuration tooltips now remain sticky (as per @brianteeman's suggestion)
++ Now using a Quick Icon plugin to show the backup status instead of the legacy module method
+# [MEDIUM] Front-end backup wouldn't work in some cases
+# [MEDIUM] Pagination not shown in Profiles view, sometimes making profiles disappear until you logged out and back in
+# [LOW] Backup failure on MySQL versions which do not support the SQL_BIG_SELECTS option
+
+Akeeba Backup 3.6.5
+================================================================================
+# [HIGH] Display bug with bundled FOF version
+
+Akeeba Backup 3.6.4
+================================================================================
+~ Better handling of default log directory path when restoring, based on which path exists and which is writable
+# [HIGH] The Akeeba Backup Update Check plugin would occasionally crash
+# [MEDIUM] Opening MySQL and MySQLi connections could sometimes fail
+# [MEDIUM] System Restore Points would not work on Windows
+# [MEDIUM] Old PHP version warning was shown in extensions installation page when using System Restore Points
+# [LOW] Main Database Only wouldn't run from the command-line
+# [LOW] Adding a RegEx folder skip filter like !#subdirectory# would result in no backup being taken
+# [LOW] Missing ID in checkbox could interfere with FTP connection test
+# [LOW] Scheduling information page would crash
+
 Akeeba Backup 3.6.3
 ================================================================================
 ~ Experimental support for Joomla! 3.0.a2; please use Joomla! 3.0-alpha2 only on TEST sites and report any bugs you find.

@@ -9,7 +9,7 @@
  */
 
 // Protection against direct access
-defined('AKEEBAENGINE') or die('Restricted access');
+defined('AKEEBAENGINE') or die();
 
 /**
  * Temporary variables management class. Everything is stored serialized in an INI

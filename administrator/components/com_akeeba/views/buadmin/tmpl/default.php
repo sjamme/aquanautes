@@ -60,7 +60,7 @@ foreach($scripting['scripts'] as $key => $data)
 			<th width="20">
 				<?php echo JHTML::_('grid.sort', 'STATS_LABEL_ID', 'id', $this->lists->order_Dir, $this->lists->order, 'default'); ?>
 			</th>
-			<th <th width="240">>
+			<th width="240">
 				<?php echo JHTML::_('grid.sort', 'STATS_LABEL_DESCRIPTION', 'description', $this->lists->order_Dir, $this->lists->order, 'default'); ?>
 			</th>
 			<th width="80">

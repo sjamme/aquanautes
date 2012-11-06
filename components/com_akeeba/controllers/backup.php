@@ -54,8 +54,9 @@ class AkeebaControllerBackup extends FOFController
 			'comment'		=> ''
 		);
 		$kettenrad->setup($options);
-		$array = $kettenrad->tick();
-		$array = $kettenrad->tick();
+		$kettenrad->tick();
+		$kettenrad->tick();
+		$array = $kettenrad->getStatusArray();
 		AECoreKettenrad::save(AKEEBA_BACKUP_ORIGIN);
 		
 		if($array['Error'] != '')
@@ -88,7 +89,9 @@ class AkeebaControllerBackup extends FOFController
 		$this->_setProfile();
 
 		$kettenrad = AECoreKettenrad::load(AKEEBA_BACKUP_ORIGIN);
-		$array = $kettenrad->tick();
+		$kettenrad->tick();
+		$array = $kettenrad->getStatusArray();
+		$kettenrad->resetWarnings(); // So as not to have duplicate warnings reports
 		AECoreKettenrad::save(AKEEBA_BACKUP_ORIGIN);
 
 		if($array['Error'] != '')
@@ -98,7 +101,7 @@ class AkeebaControllerBackup extends FOFController
 			flush();
 			JFactory::getApplication()->close();
 		}
-		elseif($array['HasRun'] == false)
+		elseif($array['HasRun'] == 1)
 		{
 			// All done
 			AEFactory::nuke();

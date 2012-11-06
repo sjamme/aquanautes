@@ -39,6 +39,9 @@ class AkeebaStrapper {
 	/** @var string A query tag to append to CSS and JS files for versioning purposes */
 	public static $tag = null;
 	
+	/** @var bool Should I preload my Javascript/CSS files on Joomla! 2.5 or earlier? */
+	public static $preloadOnOldJoomla = true;
+	
 	/**
 	 * Is this something running under the CLI mode?
 	 * @staticvar bool|null $isCli
@@ -70,7 +73,23 @@ class AkeebaStrapper {
 		
  		self::$_includedJQuery = true;
  		
- 		self::$scriptURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/js/akeebajq.js');
+		if(version_compare(JVERSION, '3.0', 'lt')) {
+			// Joomla! 2.5 and earlier, load our own library
+			self::$scriptURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/js/akeebajq.js');
+		} else {
+			if(AkeebaStrapper::isCli()) return;
+			// Joomla! 3.0 and later, use Joomla! code to load the library
+			JHtml::_('jquery.framework');
+			$script = <<<ENDSCRIPT
+if(typeof(akeeba) == 'undefined') {
+	var akeeba = {};
+}
+if(typeof(akeeba.jQuery) == 'undefined') {
+	akeeba.jQuery = jQuery.noConflict();
+}
+ENDSCRIPT;
+			JFactory::getDocument()->addScriptDeclaration($script);
+		}
  	}
  	
  	/**
@@ -100,7 +119,15 @@ class AkeebaStrapper {
  		self::$_includedJQueryUI = true;
  		$theme = self::$jqUItheme;
  		
- 		self::$scriptURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/js/akeebajqui.js');
+		$url = FOFTemplateUtils::parsePath('media://akeeba_strapper/js/akeebajqui.js');
+		if(version_compare(JVERSION, '3.0', 'lt')) {
+			// Joomla! 2.5, use our magic loader
+			self::$scriptURLs[] = $url;
+		} else {
+			// Joomla! 3.0 and later, use Joomla!'s loader
+			if(AkeebaStrapper::isCli()) return;
+			JFactory::getDocument()->addScript($url);
+		}
  		self::$cssURLs[] = FOFTemplateUtils::parsePath("media://akeeba_strapper/css/$theme/theme.css");
  	}
  	
@@ -115,10 +142,15 @@ class AkeebaStrapper {
  		if(!self::$_includedJQuery) {
  			self::jQuery();
  		}
- 		
- 		self::$scriptURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/js/bootstrap.min.js');
- 		self::$cssURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/css/bootstrap.min.css');
- 		self::$cssURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/css/strapper.css');
+ 	
+		if(version_compare(JVERSION, '3.0', 'lt')) {
+			self::$scriptURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/js/bootstrap.min.js');
+			self::$cssURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/css/bootstrap.min.css');
+		} else {
+			self::$cssURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/css/bootstrap.j3.css');
+		}
+		
+		self::$cssURLs[] = FOFTemplateUtils::parsePath('media://akeeba_strapper/css/strapper.css');
  	}
  	
  	/**
@@ -174,9 +206,16 @@ class AkeebaStrapper {
   * Peace.
   */
  function AkeebaStrapperLoader()
- {
+ {	 
  	// If there are no script defs, just go to sleep
- 	if(empty(AkeebaStrapper::$scriptURLs) && empty(AkeebaStrapper::$scriptDefs) ) return;
+ 	if(
+		empty(AkeebaStrapper::$scriptURLs) &&
+		empty(AkeebaStrapper::$scriptDefs) &&
+		empty(AkeebaStrapper::$cssDefs) &&
+		empty(AkeebaStrapper::$cssURLs)
+	) {
+		return;
+	}
 	
 	// Get the query tag
 	$tag = AkeebaStrapper::$tag;
@@ -188,11 +227,13 @@ class AkeebaStrapper {
  
  	$myscripts = '';
 	
-	$buffer = JResponse::getBody();
- 	
+	if(version_compare(JVERSION, '3.0', 'lt') && AkeebaStrapper::$preloadOnOldJoomla) {
+		$buffer = JResponse::getBody();
+	}
+	
  	if(!empty(AkeebaStrapper::$scriptURLs)) foreach(AkeebaStrapper::$scriptURLs as $url)
  	{
-		if(basename($url) == 'bootstrap.min.js') {
+		if(AkeebaStrapper::$preloadOnOldJoomla && (basename($url) == 'bootstrap.min.js')) {
 			// Special case: check that nobody else is using bootstrap[.min].js on the page.
 			$scriptRegex="/<script [^>]+(\/>|><\/script>)/i";
 			$jsRegex="/([^\"\'=]+\.(js)(\?[^\"\']*){0,1})[\"\']/i";
@@ -208,22 +249,38 @@ class AkeebaStrapper {
 			}
 			if($skip) continue;
 		}
- 		$myscripts .= '<script type="text/javascript" src="'.$url.$tag.'"></script>'."\n";
+		if(version_compare(JVERSION, '3.0', 'lt') && AkeebaStrapper::$preloadOnOldJoomla) {
+			$myscripts .= '<script type="text/javascript" src="'.$url.$tag.'"></script>'."\n";
+		} else {
+			JFactory::getDocument()->addScript($url.$tag);
+		}
  	}
  	
  	if(!empty(AkeebaStrapper::$scriptDefs))
  	{
- 		$myscripts .= '<script type="text/javascript" language="javascript">'."\n";
+		if(version_compare(JVERSION, '3.0', 'lt') && AkeebaStrapper::$preloadOnOldJoomla) {
+			$myscripts .= '<script type="text/javascript" language="javascript">'."\n";
+		} else {
+			$myscripts = '';
+		}
  		foreach(AkeebaStrapper::$scriptDefs as $def)
  		{
  			$myscripts .= $def."\n";
  		}
- 		$myscripts .= '</script>'."\n";
+		if(version_compare(JVERSION, '3.0', 'lt') && AkeebaStrapper::$preloadOnOldJoomla) {
+			$myscripts .= '</script>'."\n";
+		} else {
+			JFactory::getDocument()->addScriptDeclaration($myscripts);
+		}
  	}
- 	
+	
  	if(!empty(AkeebaStrapper::$cssURLs)) foreach(AkeebaStrapper::$cssURLs as $url)
  	{
- 		$myscripts .= '<link type="text/css" rel="stylesheet" href="'.$url.$tag.'" />'."\n";
+		if(version_compare(JVERSION, '3.0', 'lt') && AkeebaStrapper::$preloadOnOldJoomla) {
+			$myscripts .= '<link type="text/css" rel="stylesheet" href="'.$url.$tag.'" />'."\n";
+		} else {
+			JFactory::getDocument()->addStyleSheet($url.$tag);
+		}
  	}
  	
  	if(!empty(AkeebaStrapper::$cssDefs))
@@ -231,21 +288,31 @@ class AkeebaStrapper {
  		$myscripts .= '<style type="text/css">'."\n";
  		foreach(AkeebaStrapper::$cssDefs as $def)
  		{
- 			$myscripts .= $def."\n";
+			if(version_compare(JVERSION, '3.0', 'lt') && AkeebaStrapper::$preloadOnOldJoomla) {
+				$myscripts .= $def."\n";
+			} else {
+				JFactory::getDocument()->addScriptDeclaration($def."\n");
+			}
  		}
  		$myscripts .= '</style>'."\n";
  	}
  	
- 	$pos = strpos($buffer, "<head>");
- 	if($pos > 0)
- 	{
- 		$buffer = substr($buffer, 0, $pos + 6).$myscripts.substr($buffer, $pos + 6);
- 		JResponse::setBody($buffer);
- 	}
+	if(version_compare(JVERSION, '3.0', 'lt') && AkeebaStrapper::$preloadOnOldJoomla) {
+		$pos = strpos($buffer, "<head>");
+		if($pos > 0)
+		{
+			$buffer = substr($buffer, 0, $pos + 6).$myscripts.substr($buffer, $pos + 6);
+			JResponse::setBody($buffer);
+		}
+	}
  }
  
 // Add our pseudo-plugin to the application event queue
 if(!AkeebaStrapper::isCli()) {
 	$app = JFactory::getApplication();
-	$app->registerEvent('onAfterRender', 'AkeebaStrapperLoader');
+	if(version_compare(JVERSION, '3.0', 'lt') && AkeebaStrapper::$preloadOnOldJoomla) {
+		$app->registerEvent('onAfterRender', 'AkeebaStrapperLoader');
+	} else {
+		$app->registerEvent('onBeforeRender', 'AkeebaStrapperLoader');
+	}
 }

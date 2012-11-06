@@ -9,7 +9,7 @@
  */
 
 // Protection against direct access
-defined('AKEEBAENGINE') or die('Restricted access');
+defined('AKEEBAENGINE') or die();
 
 /**
  * This is Akeeba Engine's heart. Kettenrad is reponsible for launching the

@@ -34,11 +34,6 @@ abstract class AEPlatformAbstract implements AEPlatformInterface
 		return true;
 	}
 	
-	public function register_autoloader()
-	{
-		
-	}
-	
 	/**
 	 * Saves the current configuration to the database table
 	 * @param	int		$profile_id	The profile where to save the configuration to, defaults to current profile
