@@ -29,7 +29,10 @@ if (!$showRight and !$showLeft) $showNone = false;
 </head>
 <body id="page_bg">
 <a name="up" id="up"></a>
-<div id="top_menu"><div id="topnav"><jdoc:include type="modules" name="position-1" /></div></div>
+
+
+<div id="top_menu"><div id="topnav"><jdoc:include type="modules" name="position-1" /></div>
+</div>
 
 <div id="main_bg" class="banner1">
     <div id="h_area">
@@ -93,6 +96,9 @@ if (!$showRight and !$showLeft) $showNone = false;
 <p id="power_by" align="center">
 	<?php echo JText_('Powered by') ?> <a href="http://www.joomla.org/" target="_blank">Joomla!&#174;</a>.
     <?php echo JText_('Valid') ?> <a href="http://validator.w3.org/check/referer">XHTML</a> <?php echo JText::_('and') ?> <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>.
+<!-- START OF HIT COUNTER CODE -->
+<br><script language="JavaScript" src="http://www.counter160.com/js.js?img=15"></script><br><a href="http://www.000webhost.com"><img src="http://www.counter160.com/images/15/left.png" alt="Free web hosting" border="0" align="texttop"></a><a href="http://www.hosting24.com"><img alt="Web hosting" src="http://www.counter160.com/images/15/right.png" border="0" align="texttop"></a>
+<!-- END OF HIT COUNTER CODE -->
 </p>
 
 <jdoc:include type="modules" name="debug" />
