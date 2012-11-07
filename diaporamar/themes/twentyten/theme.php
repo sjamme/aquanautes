@@ -57,7 +57,7 @@ $template_sys_menu = <<<EOT
                     <ul>
                     <!-- BEGIN contact -->
                                 <li>
-                                    <a href="{CONTACT_TGT}" title="{CONTACT_TITLE}"><span>{CONTACT_ICO}{CONTACT_LNK}</span></a>
+                                    <!-- <a href="{CONTACT_TGT}" title="{CONTACT_TITLE}"><span>{CONTACT_ICO}{CONTACT_LNK}</span></a> -->
                                 </li>
                     <!-- END contact --> 
                     <!-- BEGIN sidebar -->
@@ -116,12 +116,12 @@ $template_sys_menu = <<<EOT
 <!-- END register -->
 <!-- BEGIN login -->
                 <li>
-                    <a href="{LOGIN_TGT}" title="{LOGIN_LNK}" class="firstlevel"><span class="firstlevel">{LOGIN_ICO}{LOGIN_LNK}</span></a>
+                    <!-- <a href="{LOGIN_TGT}" title="{LOGIN_LNK}" class="firstlevel"><span class="firstlevel">{LOGIN_ICO}{LOGIN_LNK}</span></a> -->
                 </li>
 <!-- END login -->
 <!-- BEGIN logout -->
                 <li>
-                    <a href="{LOGOUT_TGT}" title="{LOGOUT_LNK}" class="firstlevel"><span class="firstlevel">{LOGOUT_ICO}{LOGOUT_LNK}</span></a>
+                    <!-- <a href="{LOGOUT_TGT}" title="{LOGOUT_LNK}" class="firstlevel"><span class="firstlevel">{LOGOUT_ICO}{LOGOUT_LNK}</span></a> -->
                 </li>
 <!-- END logout -->
 </ul>
