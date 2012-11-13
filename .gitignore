@@ -10,3 +10,5 @@ templates/aqua/.DS_Store
 templates/aqua/images/.DS_Store
 
 administrator/components/com_akeeba/.DS_Store
+
+*.sql
