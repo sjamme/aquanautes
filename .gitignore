@@ -3,16 +3,7 @@ administrator/components/com_akeeba/backup/akeeba.backend.log
 
 administrator/components/com_akeeba/backup/akeeba.log
 
-templates/.DS_Store
-
-templates/aqua/.DS_Store
-
-templates/aqua/images/.DS_Store
-
-administrator/components/com_akeeba/.DS_Store
-
-*.sql
+*.DS_Store
 
 *.jpa
 
-images/partenaires/.DS_Store
